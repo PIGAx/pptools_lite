@@ -1,0 +1,211 @@
+/* ════════════════════════════════════════════════════════════
+   PP-UI — PPtools 終端機設計系統（Bloomberg Terminal 風格）
+   全站共用：設計代幣（tokens）、扁平面板、按鈕、徽章與捲軸。
+   所有頁面載入本檔後，各自的版面樣式引用這些變數，即可維持
+   一致的日夜模式與終端機質感（純黑／純白背景 + 琥珀色強調）。
+   主題規則：
+     - 預設跟隨系統（prefers-color-scheme）
+     - html[data-theme="dark" / "light"] 由 pp-theme.js 強制覆寫
+   字體：Latin 用 Inter、中文用 Noto Sans TC（跨系統一致的乾淨字面），
+   下載失敗時退回系統字體。display=swap 先以系統字顯示、字體到位再替換。
+   ════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+:root {
+  /* 色彩 — 淺色（純白桌面） */
+  --bg-base: #ffffff;
+  --glass: #ffffff;
+  --glass-strong: #f6f6f4;
+  --glass-border: #d9d9d4;
+  --glass-inner: rgba(0, 0, 0, .02);
+  --stroke: #e3e3de;
+  --surface-alt: #f2f2ee;
+  --text: #17170f;
+  --text-muted: #6e6e66;
+  --shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, .05);
+
+  /* 品牌與語意色（台股慣例：紅漲綠跌；強調色為 Bloomberg 橙／琥珀） */
+  --accent: #e07800;
+  --accent-deep: #b86200;
+  --accent-light: rgba(224, 120, 0, .10);
+  --red: #d92616;
+  --green: #0e8a52;
+  --amber: #b3760a;
+  --purple: #7c4fd6;
+  --teal: #0a8f8f;
+  --orange: #e07800;
+
+  /* 幾何 — 扁平模組化面板，無圓潤玻璃 */
+  --radius-lg: 10px;
+  --radius: 8px;
+  --radius-sm: 6px;
+  --blur: none;
+  --ring: 0 0 0 3px rgba(224, 120, 0, .3);
+
+  color-scheme: light;
+}
+
+/* 深色（跟隨系統，且未被手動指定為淺色時） — 純黑終端機 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-base: #000000;
+    --glass: #0c0c0e;
+    --glass-strong: #131316;
+    --glass-border: #2a2a30;
+    --glass-inner: rgba(255, 255, 255, .03);
+    --stroke: #232329;
+    --surface-alt: #16161a;
+    --text: #e8e6e1;
+    --text-muted: #8f8f98;
+    --shadow: 0 8px 24px rgba(0, 0, 0, .6);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, .5);
+    --accent: #ff9f1a;
+    --accent-deep: #e08000;
+    --accent-light: rgba(255, 159, 26, .13);
+    --red: #ff4d3d;
+    --green: #2ebd85;
+    --amber: #ffc14d;
+    --purple: #b18cff;
+    --teal: #2ec8c8;
+    --orange: #ff9f1a;
+    --ring: 0 0 0 3px rgba(255, 159, 26, .35);
+    color-scheme: dark;
+  }
+}
+
+/* 深色（使用者手動指定） — 純黑終端機 */
+:root[data-theme="dark"] {
+  --bg-base: #000000;
+  --glass: #0c0c0e;
+  --glass-strong: #131316;
+  --glass-border: #2a2a30;
+  --glass-inner: rgba(255, 255, 255, .03);
+  --stroke: #232329;
+  --surface-alt: #16161a;
+  --text: #e8e6e1;
+  --text-muted: #8f8f98;
+  --shadow: 0 8px 24px rgba(0, 0, 0, .6);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, .5);
+  --accent: #ff9f1a;
+  --accent-deep: #e08000;
+  --accent-light: rgba(255, 159, 26, .13);
+  --red: #ff4d3d;
+  --green: #2ebd85;
+  --amber: #ffc14d;
+  --purple: #b18cff;
+  --teal: #2ec8c8;
+  --orange: #ff9f1a;
+  --ring: 0 0 0 3px rgba(255, 159, 26, .35);
+  color-scheme: dark;
+}
+
+/* ── 基礎 ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'SF Pro TC', 'Segoe UI', system-ui, 'PingFang TC', sans-serif;
+  background: var(--bg-base);
+  color: var(--text);
+  line-height: 1.55;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 終端機風格：純色背景，不使用環境光暈（保留規則以維持版面結構） */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--bg-base);
+}
+
+/* ── 面板（扁平模組化，取代玻璃擬態） ── */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+.glass-card { padding: 18px; }
+
+/* ── 按鈕（扁平） ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--surface-alt);
+  border: 1px solid var(--stroke);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color .15s, background .15s, color .15s, filter .15s;
+}
+.btn:hover { border-color: var(--accent); color: var(--text); }
+.btn:active { filter: brightness(.95); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #111;
+}
+.btn-primary:hover { filter: brightness(1.08); border-color: var(--accent); color: #111; }
+
+.btn-danger { color: var(--red); }
+.btn-danger:hover { border-color: var(--red); }
+
+.btn-sm { padding: 5px 12px; font-size: 12px; }
+
+/* ── 表單元件（頁面加上 .pp-field 即套用終端機輸入框） ── */
+.pp-field {
+  font-size: 13px;
+  font-family: inherit;
+  padding: 9px 13px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  color: var(--text);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.pp-field:focus { border-color: var(--accent); box-shadow: var(--ring); background: var(--glass-strong); }
+.pp-field::placeholder { color: var(--text-muted); opacity: .75; }
+select.pp-field { -webkit-appearance: none; appearance: none; }
+
+/* ── 徽章 ── */
+.pp-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* ── 捲軸 ── */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--text-muted) 35%, transparent);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ── 動效偏好 ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
