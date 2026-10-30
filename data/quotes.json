@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:10:43.996Z",
+  "generatedAt": "2026-10-30T16:08:17.573Z",
   "indices": {
     "TWII": {
       "name": "加權指數",
@@ -8,7 +8,7 @@
       "changePct": -1.42,
       "prevClose": 47035.58,
       "date": "2026-10-29",
-      "asOf": "2026-10-30T15:10:45.053Z",
+      "asOf": "2026-10-30T16:08:18.960Z",
       "source": "TWSE FMTQIK"
     },
     "TWOII": {
@@ -18,59 +18,59 @@
       "changePct": -4.42,
       "prevClose": 387.37,
       "date": "2026-10-30",
-      "asOf": "2026-10-30T15:10:48.319Z",
+      "asOf": "2026-10-30T16:08:19.987Z",
       "source": "TPEX"
     },
     "DJI": {
       "name": "道瓊工業",
-      "price": 52059.56,
+      "price": 51960.84,
       "prevClose": 52342.56,
-      "change": -283,
-      "changePct": -0.5407,
+      "change": -381.72,
+      "changePct": -0.7293,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:48.000Z",
+      "asOf": "2026-10-30T16:08:19.000Z",
       "source": "Yahoo"
     },
     "GSPC": {
       "name": "S&P 500",
-      "price": 7615.44,
+      "price": 7596.56,
       "prevClose": 7720.39,
-      "change": -104.95,
-      "changePct": -1.3594,
+      "change": -123.83,
+      "changePct": -1.6039,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:48.000Z",
+      "asOf": "2026-10-30T16:08:20.000Z",
       "source": "Yahoo"
     },
     "IXIC": {
       "name": "納斯達克",
-      "price": 25617.137,
+      "price": 25503.328,
       "prevClose": 26184.725,
-      "change": -567.588,
-      "changePct": -2.1676,
+      "change": -681.397,
+      "changePct": -2.6023,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:42.000Z",
+      "asOf": "2026-10-30T16:08:20.000Z",
       "source": "Yahoo"
     },
     "SOX": {
       "name": "費城半導體",
-      "price": 10757.759,
+      "price": 10672.981,
       "prevClose": 11518.199,
-      "change": -760.44,
-      "changePct": -6.6021,
+      "change": -845.218,
+      "changePct": -7.3381,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:44.000Z",
+      "asOf": "2026-10-30T16:08:16.000Z",
       "source": "Yahoo"
     }
   },
   "fx": {
     "USDTWD": {
       "name": "美元/台幣",
-      "price": 32.59,
+      "price": 32.58,
       "prevClose": 32.506,
-      "change": 0.084,
-      "changePct": 0.2584,
+      "change": 0.074,
+      "changePct": 0.2277,
       "currency": "TWD",
-      "asOf": "2026-10-30T15:10:03.000Z",
+      "asOf": "2026-10-30T16:08:15.000Z",
       "source": "Yahoo"
     }
   },
@@ -238,10 +238,10 @@
           46096.23046875,
           47035.578125,
           46368.328125,
-          45211.828125
+          null
         ]
       },
-      "asOf": "2026-10-30T15:10:48.866Z"
+      "asOf": "2026-10-30T16:08:20.309Z"
     },
     "TWOII": {
       "intra": {
@@ -442,7 +442,18 @@
           "23:00",
           "23:05",
           "23:10",
-          "23:10"
+          "23:15",
+          "23:20",
+          "23:25",
+          "23:30",
+          "23:35",
+          "23:40",
+          "23:45",
+          "23:50",
+          "23:55",
+          "0:00",
+          "0:05",
+          "0:08"
         ],
         "closes": [
           32.566001892089844,
@@ -627,8 +638,19 @@
           32.59199905395508,
           32.59400177001953,
           32.59000015258789,
-          null,
-          32.59000015258789
+          32.59199905395508,
+          32.5880012512207,
+          32.58100128173828,
+          32.58100128173828,
+          32.582000732421875,
+          32.57899856567383,
+          32.584999084472656,
+          32.584999084472656,
+          32.58599853515625,
+          32.58599853515625,
+          32.582000732421875,
+          32.58100128173828,
+          32.58000183105469
         ],
         "prevClose": 32.506
       },
@@ -681,10 +703,10 @@
           32.5348014831543,
           32.425498962402344,
           32.3828010559082,
-          32.59000015258789
+          32.58000183105469
         ]
       },
-      "asOf": "2026-10-30T15:10:49.004Z"
+      "asOf": "2026-10-30T16:08:21.582Z"
     }
   },
   "tw": {
@@ -31929,111 +31951,111 @@
   },
   "us": {
     "AAPL": {
-      "price": 347.86,
+      "price": 346.385,
       "prevClose": 348.91,
-      "change": -1.05,
-      "changePct": -0.3009,
+      "change": -2.525,
+      "changePct": -0.7237,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:54.000Z",
+      "asOf": "2026-10-30T16:08:25.000Z",
       "source": "Yahoo"
     },
     "MSFT": {
-      "price": 522.395,
+      "price": 521.65,
       "prevClose": 530.14,
-      "change": -7.745,
-      "changePct": -1.4609,
+      "change": -8.49,
+      "changePct": -1.6015,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:26.000Z",
       "source": "Yahoo"
     },
     "NVDA": {
-      "price": 206.515,
+      "price": 205.485,
       "prevClose": 213.66,
-      "change": -7.145,
-      "changePct": -3.3441,
+      "change": -8.175,
+      "changePct": -3.8262,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:54.000Z",
+      "asOf": "2026-10-30T16:08:26.000Z",
       "source": "Yahoo"
     },
     "GOOGL": {
-      "price": 282.625,
+      "price": 281.94,
       "prevClose": 283.82,
-      "change": -1.195,
-      "changePct": -0.421,
+      "change": -1.88,
+      "changePct": -0.6624,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:27.000Z",
       "source": "Yahoo"
     },
     "AMZN": {
-      "price": 240.87,
+      "price": 238.795,
       "prevClose": 243.79,
-      "change": -2.92,
-      "changePct": -1.1978,
+      "change": -4.995,
+      "changePct": -2.0489,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:24.000Z",
       "source": "Yahoo"
     },
     "META": {
-      "price": 625.25,
+      "price": 621.64,
       "prevClose": 624.52,
-      "change": 0.73,
-      "changePct": 0.1169,
+      "change": -2.88,
+      "changePct": -0.4612,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:54.000Z",
+      "asOf": "2026-10-30T16:08:27.000Z",
       "source": "Yahoo"
     },
     "TSLA": {
-      "price": 402.785,
+      "price": 399.95,
       "prevClose": 403.3,
-      "change": -0.515,
-      "changePct": -0.1277,
+      "change": -3.35,
+      "changePct": -0.8306,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:26.000Z",
       "source": "Yahoo"
     },
     "AVGO": {
-      "price": 327.19,
+      "price": 326.15,
       "prevClose": 345,
-      "change": -17.81,
-      "changePct": -5.1623,
+      "change": -18.85,
+      "changePct": -5.4638,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:26.000Z",
       "source": "Yahoo"
     },
     "TSM": {
-      "price": 411.515,
+      "price": 407.6,
       "prevClose": 431.81,
-      "change": -20.295,
-      "changePct": -4.7,
+      "change": -24.21,
+      "changePct": -5.6066,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:28.000Z",
       "source": "Yahoo"
     },
     "QQQ": {
-      "price": 696.135,
+      "price": 692.69,
       "prevClose": 715.34,
-      "change": -19.205,
-      "changePct": -2.6847,
+      "change": -22.65,
+      "changePct": -3.1663,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:26.000Z",
       "source": "Yahoo"
     },
     "SPY": {
-      "price": 759.23,
+      "price": 757.22,
       "prevClose": 769.36,
-      "change": -10.13,
-      "changePct": -1.3167,
+      "change": -12.14,
+      "changePct": -1.5779,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:27.000Z",
       "source": "Yahoo"
     },
     "VOO": {
-      "price": 697.88,
+      "price": 696.01,
       "prevClose": 707.32,
-      "change": -9.44,
-      "changePct": -1.3346,
+      "change": -11.31,
+      "changePct": -1.599,
       "currency": "USD",
-      "asOf": "2026-10-30T15:10:55.000Z",
+      "asOf": "2026-10-30T16:08:25.000Z",
       "source": "Yahoo"
     }
   },
